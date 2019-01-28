@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 963de3ec4c7e157a77633b43ca2283e66e2d7759 berry <berry@X1Carbon-Hack-3.local> 1548646103 +0800	clone: from https://github.com/project-fencegate/Fencegate-Plugin.git
-963de3ec4c7e157a77633b43ca2283e66e2d7759 385281fe4502ad65041cd4ab77ee0435adf9631c berry <spamnut@yeah.net> 1548646443 +0800	commit: Setup Maven
-385281fe4502ad65041cd4ab77ee0435adf9631c ac06ad951d2510ea5a2005a2d05befbaf4bb9c47 berry <spamnut@yeah.net> 1548646776 +0800	commit: Initial
-ac06ad951d2510ea5a2005a2d05befbaf4bb9c47 cfe766f4df062ed3822b4cfc51b1c879f0d0713c berry <spamnut@yeah.net> 1548647068 +0800	pull --progress --no-stat -v --progress origin master: Fast-forward
-cfe766f4df062ed3822b4cfc51b1c879f0d0713c 6d8b9141f53e025296f6ce85cd2308b8b4fe2f7d berry <spamnut@yeah.net> 1548648802 +0800	commit: Basic Commands
-6d8b9141f53e025296f6ce85cd2308b8b4fe2f7d 9519ae82e942acd466d5ca85c48908d827a1759e berry <spamnut@yeah.net> 1548654910 +0800	commit: New Classes
-9519ae82e942acd466d5ca85c48908d827a1759e 5b260ae3316d3ac765eca9b96dfa6ec333445b09 berry <spamnut@yeah.net> 1548669506 +0800	commit: Update API
-5b260ae3316d3ac765eca9b96dfa6ec333445b09 985d567b5f667fceaa2d2cfbcdb332fc2ce4175c berry <spamnut@yeah.net> 1548669625 +0800	commit: Update API
-985d567b5f667fceaa2d2cfbcdb332fc2ce4175c 3937f99dcd536c05ee6fedc29aec6c37155fbb77 berry <spamnut@yeah.net> 1548669750 +0800	commit: Better Name

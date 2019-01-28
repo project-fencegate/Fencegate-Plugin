@@ -1,0 +1,10 @@
+name: Fencegate-Loader
+main: cc.fencegate.plugin.Fencegate
+authors:
+  - berry64
+  - LocyDragon
+version: 0.0.1-SNAPSHOT
+
+commands:
+  fencegate:
+    description: Checks Current Fencegate Status.

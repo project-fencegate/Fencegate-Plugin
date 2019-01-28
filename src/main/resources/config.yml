@@ -1,0 +1,9 @@
+database:
+  type: mysql
+  url: localhost:3386/fencegate
+  user: root
+  password: root
+
+login-credentials:
+  username: example@fencegate.cc
+  key: ABCDE-FGHIJ-KLMNO-PQRST

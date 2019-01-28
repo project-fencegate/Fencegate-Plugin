@@ -68,7 +68,7 @@ public abstract class PaidPlugin implements Plugin {
     }
 
     public void onEnable() {
-
+        //verification?
     }
 
     public boolean isNaggable() {

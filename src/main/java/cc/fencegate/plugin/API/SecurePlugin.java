@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Logger;
 
-public abstract class PaidPlugin implements Plugin {
+public abstract class SecurePlugin implements Plugin {
     public File getDataFolder() {
         return null;
     }

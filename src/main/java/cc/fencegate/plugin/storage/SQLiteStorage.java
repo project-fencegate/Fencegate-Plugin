@@ -16,7 +16,7 @@ public class SQLiteStorage {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:"+filename);
         } catch (SQLException e) {
-            Fencegate.instance.getLogger().warning(Language.SQL_FAIL.g());
+            Fencegate.instance.getLogger().warning(Language.SQL_FAIL);
             e.printStackTrace();
         }
     }
@@ -31,7 +31,7 @@ public class SQLiteStorage {
             );
             s.close();
         } catch (SQLException e) {
-            Fencegate.instance.getLogger().warning(Language.SQL_FAIL.g());
+            Fencegate.instance.getLogger().warning(Language.SQL_FAIL);
             e.printStackTrace();
         }
     }

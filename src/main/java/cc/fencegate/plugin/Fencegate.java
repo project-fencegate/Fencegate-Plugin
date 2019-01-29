@@ -1,7 +1,7 @@
 package cc.fencegate.plugin;
 
 import cc.fencegate.plugin.commands.MainCommand;
-import cc.fencegate.plugin.storage.SQLiteStorage;
+import cc.fencegate.plugin.util.SQLiteStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -57,7 +57,7 @@ public class Fencegate extends JavaPlugin {
             saveDefaultConfig();
         reloadConfig();
 
-        f = new File(getDataFolder()+File.separator+"data"); //plugins storage
+        f = new File(getDataFolder() + File.separator + "data"); //plugins util
         if(!f.exists())
             f.mkdirs();
 

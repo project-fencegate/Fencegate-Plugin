@@ -1,13 +1,10 @@
 package cc.fencegate.plugin.lang;
 
-public enum Language {
-    SQL_FAIL ("sql.fail");
+public class Language {
+    public static String
+            SQL_FAIL = "",
+            SQL_ENABLE = "";
 
-    private String msg="";
-    Language(String key) {
-    }
-
-    public String g(){
-        return msg;
+    public static void init() {
     }
 }

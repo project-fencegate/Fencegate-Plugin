@@ -1,8 +1,7 @@
 package cc.fencegate.plugin.util;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -86,24 +85,21 @@ public class HttpsUtil {
 
             InputStream inputStream = httpUrlConn.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
-            BufferedReader bufferedReader = new BufferedReader(
-                    new InputStreamReader(httpUrlConn.getInputStream(), "utf-8")
-            );
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+            StringBuilder stringBuilder = new StringBuilder();
             String str = null;
             while ((str = bufferedReader.readLine()) != null) {
-                buffer.append(str);
+                stringBuilder.append(str);
             }
             bufferedReader.close();
             inputStreamReader.close();
             inputStream.close();
             httpUrlConn.disconnect();
-            jsonObject = (JSONObject) new JSONParser().parse(str);
+            jsonObject = JSON.parseObject(stringBuilder.toString());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
             e.printStackTrace();
         }
         return jsonObject;

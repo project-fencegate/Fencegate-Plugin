@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.storage;
+package cc.fencegate.plugin.util;
 
 import cc.fencegate.plugin.Fencegate;
 import cc.fencegate.plugin.lang.Language;

@@ -10,6 +10,9 @@ import org.bukkit.plugin.*;
 import java.io.File;
 import java.util.Set;
 
+/**
+ * @see org.bukkit.plugin.java.PluginClassLoader
+ */
 public class PluginLoader implements PluginManager {
     public void registerInterface(Class<? extends org.bukkit.plugin.PluginLoader> aClass) throws IllegalArgumentException {
 

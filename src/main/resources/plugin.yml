@@ -1,4 +1,4 @@
-name: Fencegate-Loader
+name: FenceGate
 main: cc.fencegate.plugin.Fencegate
 authors:
   - berry64

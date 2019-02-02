@@ -1,86 +1,56 @@
 package cc.fencegate.plugin.api;
 
-import org.bukkit.Server;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginBase;
-import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.PluginLoader;
+import cc.fencegate.plugin.util.UnsafeLoadedException;
+import org.bukkit.plugin.java.*;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.logging.Logger;
+import java.lang.reflect.Field;
+import java.util.HashMap;
 
-public abstract class SecurePlugin extends PluginBase {
-    public File getDataFolder() {
-        return null;
+public abstract class SecurePlugin extends JavaPlugin {
+    private static final String RESOURCE_PATH = ".//plugins//FenceGate//resources//";
+    private static final HashMap<String,SecurePlugin> pluginList = new HashMap<String, SecurePlugin>();
+    protected static final HashMap<String,Object> objectList = new HashMap<String, Object>();
+    private static Field dataFolderField;
+
+    static {
+        objectList.put("LOAD_COMPLETE", false);
+        try {
+            dataFolderField = JavaPlugin.class.getDeclaredField("dataFolder");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        dataFolderField.setAccessible(true);
     }
 
-    public PluginDescriptionFile getDescription() {
-        return null;
+    public SecurePlugin() {
+        super();
+        if ((Boolean)objectList.get("LOAD_COMPLETE") && pluginList.containsKey(this.getName())) {
+            throw new UnsafeLoadedException("Fucking hack!");
+        }
+        pluginList.put(this.getName(), this);
+        try {
+            File folderPath = new File(".//plugins//" + this.getName());
+            dataFolderField.set(this, folderPath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public FileConfiguration getConfig() {
-        return null;
-    }
-
-    public InputStream getResource(String s) {
-        return null;
-    }
-
-    public void saveConfig() {
-
-    }
-
-    public void saveDefaultConfig() {
-
-    }
-
-    public void saveResource(String s, boolean b) {
-
-    }
-
-    public void reloadConfig() {
-
-    }
-
-    public PluginLoader getPluginLoader() {
-        return null;
-    }
-
-    public Server getServer() {
-        return null;
-    }
-
-    public boolean isEnabled() {
-        return false;
-    }
-
-    public boolean isNaggable() {
-        return false;
-    }
-
-    public void setNaggable(boolean b) {
-
-    }
-
-    public ChunkGenerator getDefaultWorldGenerator(String s, String s1) {
-        return null;
-    }
-
-    public Logger getLogger() {
-        return null;
-    }
-
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        return false;
-    }
-
-    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+    @Override
+    public InputStream getResource(String name) {
+        File resourceFile = new File(RESOURCE_PATH + name);
+        if (!resourceFile.exists()) {
+            return null;
+        }
+        try {
+            return new FileInputStream(resourceFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

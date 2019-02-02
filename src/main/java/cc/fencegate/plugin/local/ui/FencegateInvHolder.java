@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.ui;
+package cc.fencegate.plugin.local.ui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;

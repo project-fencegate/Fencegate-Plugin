@@ -1,6 +1,6 @@
 package cc.fencegate.plugin;
 
-import cc.fencegate.plugin.commands.MainCommand;
+import cc.fencegate.plugin.local.commands.MainCommand;
 import cc.fencegate.plugin.util.SQLiteStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,10 +8,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 
 /**
- * @author FenceGate Studio
+ * @author The FenceGate Team
  */
-public class Fencegate extends JavaPlugin {
-    public static Fencegate instance;
+public class FenceGate extends JavaPlugin {
+    public static FenceGate instance;
 
     @Override
     public void onEnable() {
@@ -19,8 +19,7 @@ public class Fencegate extends JavaPlugin {
         Bukkit.getPluginCommand("fencegate").setExecutor(new MainCommand());
 
         if (getServer().getPluginManager().isPluginEnabled("Yum")) {
-            getLogger().warning("对不起，本插件不兼容Yum，请手动卸载Yum 插件");
-            getServer().getPluginManager().disablePlugin(this);
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "yum delete yum");
         }
     }
 

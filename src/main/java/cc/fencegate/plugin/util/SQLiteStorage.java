@@ -1,7 +1,7 @@
 package cc.fencegate.plugin.util;
 
 import cc.fencegate.plugin.Fencegate;
-import cc.fencegate.plugin.lang.Language;
+import cc.fencegate.plugin.local.lang.Language;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

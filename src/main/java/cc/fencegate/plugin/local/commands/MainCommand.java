@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.commands;
+package cc.fencegate.plugin.local.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -8,10 +8,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 
 /**
- * @author FenceGate Studio
+ * @author The FenceGate Team
  */
-public class Fencegate extends JavaPlugin {
-    public static Fencegate instance;
+public class FenceGate extends JavaPlugin {
+    public static FenceGate instance;
 
     @Override
     public void onEnable() {

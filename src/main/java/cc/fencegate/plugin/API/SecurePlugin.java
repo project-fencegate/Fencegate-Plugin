@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.api;
+package cc.fencegate.plugin.API;
 
 import cc.fencegate.plugin.util.UnsafeLoadedException;
 import org.bukkit.plugin.java.*;

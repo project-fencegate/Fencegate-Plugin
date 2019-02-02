@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.api;
+package cc.fencegate.plugin.API;
 
 public class VerifyLoader {
 	private static boolean hasBeenLoaded = false;

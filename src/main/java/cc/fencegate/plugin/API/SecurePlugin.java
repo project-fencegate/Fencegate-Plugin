@@ -1,7 +1,7 @@
 package cc.fencegate.plugin.API;
 
 import cc.fencegate.plugin.util.UnsafeLoadedException;
-import org.bukkit.plugin.java.*;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 public abstract class SecurePlugin extends JavaPlugin {
     private static final String RESOURCE_PATH = ".//plugins//FenceGate//resources//";
     private static final HashMap<String,SecurePlugin> pluginList = new HashMap<String, SecurePlugin>();
-    protected static final HashMap<String,Object> objectList = new HashMap<String, Object>();
+    public static final HashMap<String, Object> objectList = new HashMap<String, Object>();
     private static Field dataFolderField;
 
     static {

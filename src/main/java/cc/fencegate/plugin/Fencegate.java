@@ -15,7 +15,10 @@ public class Fencegate extends JavaPlugin {
         instance = this;
         Bukkit.getPluginCommand("fencegate").setExecutor(new MainCommand());
 
-
+        if (getServer().getPluginManager().isPluginEnabled("Yum")) {
+            getLogger().warning("对不起，本插件不兼容Yum，请手动卸载Yum 插件");
+            getServer().getPluginManager().disablePlugin(this);
+        }
     }
 
     private void sync_UserData(){

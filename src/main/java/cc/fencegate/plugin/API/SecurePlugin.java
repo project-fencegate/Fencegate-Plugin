@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.API;
+package cc.fencegate.plugin.api;
 
 import org.bukkit.Server;
 import org.bukkit.command.Command;
@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginBase;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginLoader;
 
@@ -14,7 +15,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Logger;
 
-public abstract class SecurePlugin implements Plugin {
+public abstract class SecurePlugin extends PluginBase {
     public File getDataFolder() {
         return null;
     }
@@ -59,18 +60,6 @@ public abstract class SecurePlugin implements Plugin {
         return false;
     }
 
-    public void onDisable() {
-
-    }
-
-    public void onLoad() {
-
-    }
-
-    public void onEnable() {
-        //verification?
-    }
-
     public boolean isNaggable() {
         return false;
     }
@@ -84,10 +73,6 @@ public abstract class SecurePlugin implements Plugin {
     }
 
     public Logger getLogger() {
-        return null;
-    }
-
-    public String getName() {
         return null;
     }
 

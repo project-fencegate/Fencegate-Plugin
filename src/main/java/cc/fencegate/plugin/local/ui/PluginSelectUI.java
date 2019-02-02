@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.ui;
+package cc.fencegate.plugin.local.ui;
 
 
 /**

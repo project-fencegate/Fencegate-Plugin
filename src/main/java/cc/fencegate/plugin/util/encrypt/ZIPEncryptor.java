@@ -1,7 +1,7 @@
 package cc.fencegate.plugin.util.encrypt;
 
 import cc.fencegate.plugin.Fencegate;
-import cc.fencegate.plugin.lang.Language;
+import cc.fencegate.plugin.local.lang.Language;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 

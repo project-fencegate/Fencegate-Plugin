@@ -1,6 +1,6 @@
 package cc.fencegate.plugin;
 
-import cc.fencegate.plugin.commands.MainCommand;
+import cc.fencegate.plugin.local.commands.MainCommand;
 import cc.fencegate.plugin.util.SQLiteStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

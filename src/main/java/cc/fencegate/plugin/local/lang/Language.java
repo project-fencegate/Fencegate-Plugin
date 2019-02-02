@@ -1,4 +1,4 @@
-package cc.fencegate.plugin.lang;
+package cc.fencegate.plugin.local.lang;
 
 public class Language {
     public static String

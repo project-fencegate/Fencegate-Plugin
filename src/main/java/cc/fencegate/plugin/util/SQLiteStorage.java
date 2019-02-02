@@ -10,11 +10,12 @@ import java.sql.Statement;
 
 public class SQLiteStorage {
     private String filename;
+    private static final String CONNECTION_PERFIX = "jdbc:sqlite:";
 
     public SQLiteStorage(String filename){
         this.filename = filename;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:"+filename);
+            connection = DriverManager.getConnection(CONNECTION_PERFIX + filename);
         } catch (SQLException e) {
             Fencegate.instance.getLogger().warning(Language.SQL_FAIL);
             e.printStackTrace();

@@ -7,6 +7,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
+/**
+ * @author FenceGate Studio
+ */
 public class Fencegate extends JavaPlugin {
     public static Fencegate instance;
 

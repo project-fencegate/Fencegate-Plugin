@@ -1,6 +1,5 @@
 package cc.fencegate.plugin.util;
-
-import cc.fencegate.plugin.Fencegate;
+import cc.fencegate.plugin.FenceGate;
 import cc.fencegate.plugin.local.lang.Language;
 
 import java.sql.Connection;
@@ -17,7 +16,7 @@ public class SQLiteStorage {
         try {
             connection = DriverManager.getConnection(CONNECTION_PERFIX + filename);
         } catch (SQLException e) {
-            Fencegate.instance.getLogger().warning(Language.SQL_FAIL);
+            FenceGate.instance.getLogger().warning(Language.SQL_FAIL);
             e.printStackTrace();
         }
     }
@@ -32,7 +31,7 @@ public class SQLiteStorage {
             );
             s.close();
         } catch (SQLException e) {
-            Fencegate.instance.getLogger().warning(Language.SQL_FAIL);
+            FenceGate.instance.getLogger().warning(Language.SQL_FAIL);
             e.printStackTrace();
         }
     }

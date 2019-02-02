@@ -1,6 +1,6 @@
 package cc.fencegate.plugin.util.encrypt;
 
-import cc.fencegate.plugin.Fencegate;
+import cc.fencegate.plugin.FenceGate;
 import cc.fencegate.plugin.local.lang.Language;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -13,10 +13,10 @@ public class ZIPEncryptor {
 
     public ZIPEncryptor(String file, String key) {
         try {
-            data = new ZipFile(new File(Fencegate.instance.getDataFolder(), file));
+            data = new ZipFile(new File(FenceGate.instance.getDataFolder(), file));
             k = key;
         } catch (ZipException e) {
-            Fencegate.instance.getLogger().info(Language.ENCRYPT_DATAFETCH_FAIL);
+            FenceGate.instance.getLogger().info(Language.ENCRYPT_DATAFETCH_FAIL);
             e.printStackTrace();
         }
     }

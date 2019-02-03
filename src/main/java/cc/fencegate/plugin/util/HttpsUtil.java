@@ -46,6 +46,7 @@ public class HttpsUtil {
             httpUrlConn.setDoOutput(true);
             httpUrlConn.setDoInput(true);
             httpUrlConn.setUseCaches(false);
+            httpUrlConn.setRequestProperty("Content-Type", "application/json;charset=utf-8");
             httpUrlConn.setRequestMethod(method);
 
             if (method.equalsIgnoreCase("GET"))

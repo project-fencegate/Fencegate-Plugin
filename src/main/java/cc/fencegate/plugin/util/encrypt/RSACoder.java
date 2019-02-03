@@ -1,5 +1,7 @@
 package cc.fencegate.plugin.util.encrypt;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -183,7 +185,7 @@ public class RSACoder {
 
         //私钥
         byte[] privateKey = RSACoder.getPrivateKey(keyMap);
-        System.out.println("公钥：\n" + base64Encoder.encode(privateKey));
+        System.out.println("公钥：\n" + base64Encoder.encode(publicKey));
         System.out.println("私钥：\n" + base64Encoder.encode(privateKey));
 
         System.out.println("================密钥对构造完毕,甲方将公钥公布给乙方，开始进行加密数据的传输=============");
@@ -198,23 +200,14 @@ public class RSACoder {
         byte[] decode1 = RSACoder.decryptByPublicKey(code1, publicKey);
         System.out.println("乙方解密后的数据：" + new String(decode1) + "\n\n");
 
-        System.out.println("===========反向进行操作，乙方向甲方发送数据==============\n\n");
-
-        str = "乙方向甲方发送数据RSA算法";
-
-        System.out.println("原文:" + str);
-
-        //乙方使用公钥对数据进行加密
-        byte[] code2 = RSACoder.encryptByPublicKey(str.getBytes(), publicKey);
-        System.out.println("===========乙方使用公钥对数据进行加密==============");
-        System.out.println("加密后的数据：" + base64Encoder.encode(code2));
-
-        System.out.println("=============乙方将数据传送给甲方======================");
-        System.out.println("===========甲方使用私钥对数据进行解密==============");
-
-        //甲方使用私钥对数据进行解密
-        byte[] decode2 = RSACoder.decryptByPrivateKey(code2, privateKey);
-
-        System.out.println("甲方解密后的数据：" + new String(decode2));
+        String json = null;
+        HashMap<String,Object> keys = new HashMap<String, Object>();
+        keys.put("username", "example@fencegate.cc");
+        keys.put("uid", "ssss");
+        HashMap<String,Object> sub = new HashMap<String, Object>();
+        sub.put("plugin1", "xxx");
+        keys.put("plugins", sub);
+        json = JSON.toJSONString(keys);
+        System.out.println(json);
     }
 }

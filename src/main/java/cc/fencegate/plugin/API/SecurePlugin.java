@@ -1,5 +1,6 @@
 package cc.fencegate.plugin.API;
 
+import cc.fencegate.plugin.plugin.SecurePluginLoad;
 import cc.fencegate.plugin.util.UnsafeLoadedException;
 import org.bukkit.plugin.java.*;
 
@@ -17,7 +18,9 @@ public abstract class SecurePlugin extends JavaPlugin {
     private static Field dataFolderField;
 
     static {
+        objectList.put("AIR", Boolean.valueOf("true"));
         objectList.put("LOAD_COMPLETE", false);
+        objectList.put("AIR", Boolean.valueOf("false"));
         try {
             dataFolderField = JavaPlugin.class.getDeclaredField("dataFolder");
         } catch (NoSuchFieldException e) {
@@ -28,8 +31,8 @@ public abstract class SecurePlugin extends JavaPlugin {
 
     public SecurePlugin() {
         super();
-        if ((Boolean)objectList.get("LOAD_COMPLETE") && pluginList.containsKey(this.getName())) {
-            throw new UnsafeLoadedException("Fucking hack!");
+        if ((Boolean)objectList.get("LOAD_COMPLETE") || pluginList.containsKey(this.getName())) {
+            throw new UnsafeLoadedException("You are not allowed to load in this way.");
         }
         pluginList.put(this.getName(), this);
         try {

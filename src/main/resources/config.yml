@@ -7,3 +7,6 @@ database:
 login-credentials:
   username: example@fencegate.cc
   key: ABCDE-FGHIJ-KLMNO-PQRST
+
+plugins:
+  - ExamplePlugin
